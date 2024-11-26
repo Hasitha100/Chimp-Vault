@@ -2,9 +2,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { FC, useEffect, useRef } from "react";
 import largeRoadImg from '../assets/largeLocation.png';
-import locationImg from '../assets/location.png';
 import RoadImg from '../assets/road.png';
 import RoadMapImg from '../assets/RoadMap.png';
+import RoadmapCard from "../components/RoadmapCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const RoadMap: FC = () => {
@@ -83,67 +83,19 @@ const RoadMap: FC = () => {
             {/* RoadMap items */}
             <div className="w-full h-full">
                 <div className="absolute sm:top-0 sm:left-1/2 sm:transform  translate-y-1/4 lg:top-1/2 lg:left-1/4 lg:transform -translate-x-3/4 scroll-item">
-                    <div className="flex justify-center items-center p-4">                  
-                        <div className="bg-[#B23EF8] p-2 rounded-2xl shadow-xl text-white lg:w-72 lg:h-54">
-                            <div className="flex flex-row justify-between">
-                                <h2 className="font-climate text-2xl lg:text-3xl mb-2">01</h2>
-                                <img
-                                    src={locationImg}
-                                    alt="Location"
-                                    className="h-6 w-4 sm:h-10 sm:w-8 md:h-12 md:w-10 lg:h-12 lg:w-10 xl:h-12 xl:w-10 object-cover"
-                                />
-                            </div>
-                            <p className="font-gugi lg:text-3xl">Research, define token utility, ecosystem, and market strategy development.</p>
-                        </div>
-                    </div>
+                    <RoadmapCard headerNo = '01' para = 'Research, define token utility, ecosystem, and market strategy development.'/>
                 </div>
 
                 <div className="absolute sm:top-1/4 sm:left-1/2 sm:transform translate-y-1/2  lg:top-0 lg:left-1/4 lg:transform -translate-x-1/2 -translate-y-3/4 scroll-item">
-                    <div className="flex justify-center items-center ">              
-                        <div className="bg-[#B23EF8] p-2 rounded-2xl shadow-xl text-white lg:w-72 lg:h-54">
-                            <div className="flex flex-row justify-between">
-                                <h2 className="font-climate text-2xl lg:text-3xl mb-2">02</h2>
-                                <img
-                                    src={locationImg}
-                                    alt="Location"
-                                    className="h-6 w-4 sm:h-10 sm:w-8 md:h-12 md:w-10 lg:h-12 lg:w-10 xl:h-12 xl:w-10 object-cover"
-                                />
-                            </div>
-                            <p className="font-gugi lg:text-3xl">Create, audit, and deploy smart contract for secure token launch.</p>
-                        </div>
-                    </div>
+                    <RoadmapCard headerNo = '02' para = 'Create, audit, and deploy smart contract for secure token launch.'/>
                 </div>
 
                 <div className="absolute sm:top-1/2 sm:left-1/2 sm:transform translate-y-1/4 lg:top-0 lg:left-3/4 lg:transform -translate-x-1/4 -translate-y-1/2 scroll-item">
-                    <div className="flex justify-center items-center p-4">                
-                        <div className="bg-[#B23EF8] p-2 rounded-2xl shadow-xl text-white lg:w-72 lg:h-54">
-                            <div className="flex flex-row justify-between">
-                                <h2 className="font-climate text-2xl lg:text-3xl mb-2">03</h2>
-                                <img
-                                    src={locationImg}
-                                    alt="Location"
-                                    className="h-6 w-4 sm:h-10 sm:w-8 md:h-12 md:w-10 lg:h-12 lg:w-10 xl:h-12 xl:w-10 object-cover"
-                                />
-                            </div>
-                            <p className="font-gugi lg:text-3xl">Build partnerships, promote platform, engage community through incentives.</p>
-                        </div>
-                    </div>
+                    <RoadmapCard headerNo = '03' para = 'Build partnerships, promote platform, engage community through incentives.'/>
                 </div>
 
                 <div className="absolute sm:top-3/4 sm:left-1/2 sm:transform translate-y-1/4 lg:top-1/2 lg:left-3/4 lg:transform -translate-x-1/4 -translate-y-3/4 scroll-item">
-                    <div className="flex justify-center items-center p-4">
-                        <div className="bg-[#B23EF8] p-2 rounded-2xl shadow-xl text-white lg:w-72 lg:h-54">
-                            <div className="flex flex-row justify-between">
-                                <h2 className="font-climate text-2xl lg:text-3xl mb-2">04</h2>
-                                <img
-                                    src={locationImg}
-                                    alt="Location"
-                                    className="h-6 w-4 sm:h-10 sm:w-8 md:h-12 md:w-10 lg:h-12 lg:w-10 xl:h-12 xl:w-10 object-cover"
-                                />
-                            </div>
-                            <p className="font-gugi lg:text-3xl">Integrate tokens with decentralized applications, drive adoption, scale ecosystem.</p>
-                        </div>
-                    </div>
+                    <RoadmapCard headerNo = '04' para = 'Integrate tokens with decentralized applications, drive adoption, scale ecosystem.'/>
                 </div>
             </div>
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/4' ref={sectionRef}>
