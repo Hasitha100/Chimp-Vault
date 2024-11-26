@@ -34,9 +34,9 @@ const RoadMap: FC = () => {
         // Animate the roadmap items
         gsap.fromTo(
           ".scroll-item",
-          { y: 50, opacity: 0 }, // Initial 
+          { y: 50, opacity: 0 }, // Initial stage 
           {
-            y: 0,
+            y: 0, //final stage
             opacity: 1,
             duration: 1,
             ease: "power1.out",
