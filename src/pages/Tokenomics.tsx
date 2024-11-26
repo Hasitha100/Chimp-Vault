@@ -4,7 +4,7 @@ import decorator from '../assets/decorator.png';
 import HeroTokenomics from "../components/HeroTokenomics";
 
 const Tokenomics: FC = () => {
-  // animation for decorator image
+  // animation for decorator image which used at top and bottom of page
   useEffect(()=>{
     gsap.to(".decorator-img",{
       x: "-50%", 
