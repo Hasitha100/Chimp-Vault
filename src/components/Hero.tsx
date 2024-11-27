@@ -2,13 +2,20 @@ import gsap from 'gsap';
 import { FC, useEffect, useRef } from 'react';
 import cardImg from '../assets/homeImg.png';
 import cardImg2 from '../assets/homeImg2.png';
-
+import monkeyTalk from '../assets/monkey.wav';
 const Hero: FC = () => {
     const cardImg1Ref = useRef<HTMLImageElement>(null);
     const cardImg2Ref = useRef<HTMLImageElement>(null);
-    
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    const handleAudio = () :void => {
+        if (audioRef.current) {
+            audioRef.current.play().catch((err) => {
+                console.error("Failed to play audio:", err);
+            });
+        }
+    }
     useEffect(()=>{
-        
         const timeline = gsap.timeline({ repeat: -1 }); // Infinite loop
         timeline
         // First image (mouth closed) fades in 
@@ -74,7 +81,7 @@ const Hero: FC = () => {
             
         </div>
         
-        <div className='flex flex-col justify-center items-center lg:-mt-60 relative '>
+        <div className='flex flex-col justify-center items-center lg:-mt-60 relative mb-8 '>
             <img
                 src={cardImg}
                 alt="Hero Image"
@@ -87,6 +94,14 @@ const Hero: FC = () => {
                 className="h-192 w-72 object-cover opacity-0"
                 ref={cardImg2Ref}
             />
+        </div>
+        <div className='flex flex-row justify-center'>
+            <button
+                onClick={handleAudio}
+                className="border-4 border-purple-500 font-gugi px-4 py-2 text-white sm:text-xl lg:text-2xl rounded-full hover:bg-purple-500 hover:border-white">
+                Play Audio
+            </button>
+            <audio ref={audioRef} src={monkeyTalk} preload="auto" />
         </div>
         </>
     )
