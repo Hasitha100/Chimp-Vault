@@ -1,15 +1,16 @@
 import gsap from 'gsap';
 import { FC, useEffect } from 'react';
-import decorator from '../assets/decorator.png';
+import decorate from '../assets/decorate.png';
+import decorateBack from '../assets/decoratorBack.png';
 import InstaCard from '../components/InstaCard';
 import QuestionForm from "../components/QuestionForm";
 import TwitterCard from '../components/TwitterCard';
 const Answer: FC = () => {
   useEffect(()=>{
     gsap.to(".decorator-img",{
-      x: "-50%", 
+      x: "-10%", 
       ease: "linear",
-      duration: 5, 
+      duration: 1, 
       repeat: -1,
     });
     gsap.to(".background-text",{
@@ -48,7 +49,24 @@ const Answer: FC = () => {
               <TwitterCard/>
               <InstaCard/>
           </div>
-          <div className='flex absolute -top-20'>
+          <div className='absolute -top-20 z-0'>
+            <div className='relative'>
+            <img
+                  src={decorateBack}
+                  alt="Decorator Background"
+                  className="h-full w-full object-cover relative z-10"
+                  
+            />
+            <img
+                  src={decorate}
+                  alt="Decorator Image"
+                  className="decorator-img h-full w-full object-cover absolute top-0 z-30"
+                  
+            />
+            </div>
+          </div>
+          
+          {/* <div className='flex absolute -top-20'>
             <img
                 src={decorator}
                 alt="Decorator Image" 
@@ -59,8 +77,24 @@ const Answer: FC = () => {
                 alt="Decorator Image" 
                 className="decorator-img w-full"
             />
+          </div> */}
+          <div className='absolute -bottom-20 z-0'>
+            <div className='relative'>
+            <img
+                  src={decorateBack}
+                  alt="Decorator Background"
+                  className="h-full w-full object-cover relative z-10"
+                  
+            />
+            <img
+                  src={decorate}
+                  alt="Decorator Image"
+                  className="decorator-img h-full w-full object-cover absolute top-0 z-30"
+                  
+            />
+            </div>
           </div>
-          <div className='flex absolute -bottom-20'>
+          {/* <div className='flex absolute -bottom-20'>
           <img
               src={decorator}
               alt="Decorator Image"  
@@ -71,7 +105,7 @@ const Answer: FC = () => {
               alt="Decorator Image"  
               className="decorator-img w-full"
           />
-          </div>
+          </div> */}
         </div>
 
     </div>

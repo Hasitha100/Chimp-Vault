@@ -36,13 +36,13 @@ const Footer: FC = () => {
                 <a href="#home">HOME</a>
                 </li>
                 <li className="hover:bg-gray-700 lg:hover:bg-transparent lg:hover:border-2 border-[#AD4BFA] px-4 py-2 rounded-full">
-                <a href="#about">ABOUT US</a>
+                <a href="#answer">ABOUT US</a>
                 </li>
                 <li className="hover:bg-gray-700 lg:hover:bg-transparent lg:hover:border-2 border-[#AD4BFA] px-4 py-2 rounded-full">
-                <a href="#services">TOKENOMICS</a>
+                <a href="#tokenomics">TOKENOMICS</a>
                 </li>
                 <li className="hover:bg-gray-700 lg:hover:bg-transparent lg:hover:border-2 border-[#AD4BFA] px-4 py-2 rounded-full">
-                <a href="#contact">HOW TO BUY</a>
+                <a href="#buy">HOW TO BUY</a>
                 </li>
                 <li className="hover:bg-gray-700 lg:hover:bg-transparent lg:hover:border-2 border-[#AD4BFA] px-4 py-2 rounded-full">
                 <a href="#roadmap">ROAD MAP</a>
